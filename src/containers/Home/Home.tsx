@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './styles.scss';
 import {connect} from 'react-redux';
 import {ActionCreatorsMapObject, bindActionCreators, Dispatch} from 'redux';
 import {fetchProjects, resetProjects} from './HomeAction';
