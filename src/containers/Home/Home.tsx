@@ -30,7 +30,10 @@ class Home extends React.Component<Props, State> {
       <div key={key}>({item.id}) {item.name}</div>
     );
     return (
-      <div>{projectsList}</div>
+      <div>
+        <h2>Projects</h2>
+        {projectsList}
+      </div>
     )
   }
 }

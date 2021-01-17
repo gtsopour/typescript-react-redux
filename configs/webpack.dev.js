@@ -1,6 +1,6 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
     mode: 'development',
@@ -19,14 +19,15 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: 'public/',
-        port: 3001,
+        port: 3000,
         proxy: [
             {
                 path: '/api/*',
-                target: 'http://localhost:3001/'
+                target: 'http://localhost:3000/'
             }
         ],
-        historyApiFallback: true
+        historyApiFallback: true,
+        open: true,
     },
     devtool: 'source-map',
     module: {
@@ -34,49 +35,42 @@ module.exports = {
             {
                 test: /\.ts(x?)$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 enforce: 'pre',
                 test: /\.js$/,
-                loader: 'source-map-loader'
+                use: 'source-map-loader',
             },
             {
                 test: /\.css$/,
                 exclude: /\.useable\.css$/,
-                loader: 'style-loader!css-loader'
-            },
-            {
-                test: /\.useable\.css$/,
-                loader: 'style-loader/useable!css'
-            },
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader'
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.html$/,
                 exclude: /node_modules/,
-                loader: 'html-loader'
+                use: 'html-loader'
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+                use: 'url-loader?limit=10000&mimetype=application/font-woff'
             },
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file-loader'
+                use: 'file-loader'
             }
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-          template: 'src/index.html',
-          hash: true
+            template: 'src/index.html',
+            hash: true
         })
     ]
 };

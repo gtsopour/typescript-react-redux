@@ -7,9 +7,7 @@ export class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path='/'>
-            <Home />
-          </Route>
+          <Route exact path={`/`} component={Home} />
         </Switch>
       </Router>
     )

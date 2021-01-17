@@ -1,27 +1,20 @@
-# TypeScript React Redux Sass Webpack
+# Typescript React Redux Webpack Sass Starter
 
-This repository 
-* is a SPA (Single Page Application) with React and Redux using TypeScript
-* uses Sass as preprocessor
-* testing with Jest and Enzyme
-* uses webpack as module bundler
+* Typescript React Redux Webpack Sass Starter
+* Typescript
+* Redux state container
+* Sass preprocessor
+* Webpack module bundler
+* Testing with Jest
 
-# Running application locally
-
-```shell
-npm run build:dev
-```
-
+## Available Scripts
 ```shell
 npm run start
 ```
-NOTE: Will start the application in localhost:3001 using webpack dev server
+NOTE: The App will start in localhost:3000 using webpack dev server
 
-# Testing the project
-
-Updating snapshot
 ```shell
-npm run test:update-snapshot
+npm run build
 ```
 
 ```shell

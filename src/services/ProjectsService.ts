@@ -1,7 +1,7 @@
 const projects = [
   {
     "id": 1,
-    "name": "Typescript React Redux Starter"
+    "name": "Typescript React Redux Webpack Sass Starter"
   }
 ];
 
