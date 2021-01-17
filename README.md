@@ -1,11 +1,11 @@
 # Typescript React Redux Webpack Sass Starter
 
-* Typescript React Redux Webpack Sass Starter
 * Typescript
-* Redux state container
+* React / React Router
+* Redux store / Redux Thunk middleware
 * Sass preprocessor
-* Webpack module bundler
-* Testing with Jest
+* Webpack / Webpack Dev Server / HTML, File, Sass, CSS loaders
+* Jest Testing Framework
 
 ## Available Scripts
 ```shell
